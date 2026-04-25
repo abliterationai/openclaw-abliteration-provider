@@ -1,0 +1,38 @@
+{
+  "id": "abliteration",
+  "name": "Abliteration",
+  "description": "Abliteration.ai model provider for OpenClaw",
+  "providers": ["abliteration"],
+  "autoEnableWhenConfiguredProviders": ["abliteration"],
+  "providerAuthEnvVars": {
+    "abliteration": ["ABLITERATION_API_KEY"]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "abliteration",
+      "method": "api-key",
+      "choiceId": "abliteration-api-key",
+      "choiceLabel": "Abliteration API key",
+      "groupId": "abliteration",
+      "groupLabel": "Abliteration",
+      "groupHint": "OpenAI Responses API",
+      "optionKey": "abliterationApiKey",
+      "cliFlag": "--abliteration-api-key",
+      "cliOption": "--abliteration-api-key <key>",
+      "cliDescription": "Abliteration API key",
+      "onboardingScopes": ["text-inference"]
+    }
+  ],
+  "uiHints": {
+    "apiKey": {
+      "label": "API key",
+      "placeholder": "ak_...",
+      "sensitive": true
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
