@@ -16,7 +16,7 @@ describe("abliteration provider plugin", () => {
     expect(providers[0]).toMatchObject({
       id: "abliteration",
       label: "Abliteration",
-      docsPath: "https://github.com/abliteration-ai/openclaw-abliteration-provider#readme",
+      docsPath: "https://github.com/abliterationai/openclaw-abliteration-provider#readme",
       envVars: ["ABLITERATION_API_KEY"],
     });
   });

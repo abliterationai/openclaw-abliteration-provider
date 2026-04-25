@@ -8,7 +8,7 @@ OpenClaw.
 After the package is published to ClawHub or npm:
 
 ```bash
-openclaw plugins install @abliteration-ai/openclaw-abliteration-provider
+openclaw plugins install @abliterationai/openclaw-abliteration-provider
 openclaw plugins enable abliteration
 openclaw gateway restart
 ```
@@ -60,6 +60,5 @@ npm run pack:dry-run
 Publish on ClawHub after GitHub is pushed:
 
 ```bash
-clawhub package publish abliteration-ai/openclaw-abliteration-provider --dry-run
-clawhub package publish abliteration-ai/openclaw-abliteration-provider
+clawhub package publish abliterationai/openclaw-abliteration-provider
 ```

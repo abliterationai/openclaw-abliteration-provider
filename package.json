@@ -1,5 +1,5 @@
 {
-  "name": "@abliteration-ai/openclaw-abliteration-provider",
+  "name": "@abliterationai/openclaw-abliteration-provider",
   "version": "0.1.0",
   "description": "Abliteration.ai provider plugin for OpenClaw",
   "license": "MIT",
@@ -7,12 +7,12 @@
   "main": "./index.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abliteration-ai/openclaw-abliteration-provider.git"
+    "url": "git+https://github.com/abliterationai/openclaw-abliteration-provider.git"
   },
   "bugs": {
-    "url": "https://github.com/abliteration-ai/openclaw-abliteration-provider/issues"
+    "url": "https://github.com/abliterationai/openclaw-abliteration-provider/issues"
   },
-  "homepage": "https://github.com/abliteration-ai/openclaw-abliteration-provider#readme",
+  "homepage": "https://github.com/abliterationai/openclaw-abliteration-provider#readme",
   "files": [
     "*.ts",
     "!*.test.ts",

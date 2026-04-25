@@ -10,7 +10,7 @@ export default defineSingleProviderPluginEntry({
   description: "Abliteration.ai model provider plugin",
   provider: {
     label: "Abliteration",
-    docsPath: "https://github.com/abliteration-ai/openclaw-abliteration-provider#readme",
+    docsPath: "https://github.com/abliterationai/openclaw-abliteration-provider#readme",
     auth: [
       {
         methodId: "api-key",
