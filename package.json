@@ -1,6 +1,6 @@
 {
   "name": "@abliterationai/openclaw-abliteration-provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Abliteration.ai provider plugin for OpenClaw",
   "license": "MIT",
   "type": "module",
@@ -17,6 +17,7 @@
     "*.ts",
     "!*.test.ts",
     "openclaw.plugin.json",
+    "SKILL.md",
     "README.md",
     "LICENSE"
   ],

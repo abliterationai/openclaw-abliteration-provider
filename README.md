@@ -8,6 +8,8 @@ OpenClaw.
 After the package is published to ClawHub or npm:
 
 ```bash
+openclaw plugins install clawhub:@abliterationai/openclaw-abliteration-provider
+# Or install from npm:
 openclaw plugins install @abliterationai/openclaw-abliteration-provider
 openclaw plugins enable abliteration
 openclaw gateway restart
@@ -45,6 +47,7 @@ The plugin registers:
 
 - Provider id: `abliteration`
 - API key env var: `ABLITERATION_API_KEY`
+- ClawHub required env metadata: `ABLITERATION_API_KEY`
 - Default model: `abliteration/abliterated-model`
 - API: OpenAI Responses
 - Base URL: `https://api.abliteration.ai/v1`

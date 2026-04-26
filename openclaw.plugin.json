@@ -3,6 +3,15 @@
   "name": "Abliteration",
   "description": "Abliteration.ai model provider for OpenClaw",
   "providers": ["abliteration"],
+  "setup": {
+    "providers": [
+      {
+        "id": "abliteration",
+        "authMethods": ["api-key"],
+        "envVars": ["ABLITERATION_API_KEY"]
+      }
+    ]
+  },
   "autoEnableWhenConfiguredProviders": ["abliteration"],
   "providerAuthEnvVars": {
     "abliteration": ["ABLITERATION_API_KEY"]
