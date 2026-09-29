@@ -1,10 +1,4 @@
-import { normalizeProviderId } from "openclaw/plugin-sdk/provider-model-shared";
-import {
-  applyAgentDefaultModelPrimary,
-  applyOnboardAuthAgentModelsAndProviders,
-  type ModelProviderConfig,
-  type OpenClawConfig,
-} from "openclaw/plugin-sdk/provider-onboard";
+import type { OpenClawConfig } from "openclaw/plugin-sdk/plugin-entry";
 import {
   ABLITERATION_BASE_URL,
   ABLITERATION_DEFAULT_MODEL_REF,
@@ -12,8 +6,13 @@ import {
   ABLITERATION_PROVIDER_API,
   buildAbliterationModelDefinition,
 } from "./models.js";
+import type { ModelProviderConfig } from "./types.js";
 
 export { ABLITERATION_DEFAULT_MODEL_REF };
+
+function normalizeProviderId(providerId: string): string {
+  return providerId.trim().toLowerCase();
+}
 
 function findExistingProviderKey(
   providers: Record<string, ModelProviderConfig>,
@@ -67,10 +66,20 @@ function applyAbliterationProviderConfigInternal(cfg: OpenClawConfig): OpenClawC
     ...agentModels[ABLITERATION_DEFAULT_MODEL_REF],
   };
 
-  return applyOnboardAuthAgentModelsAndProviders(cfg, {
-    agentModels,
-    providers,
-  });
+  return {
+    ...cfg,
+    models: {
+      ...cfg.models,
+      providers,
+    },
+    agents: {
+      ...cfg.agents,
+      defaults: {
+        ...cfg.agents?.defaults,
+        models: agentModels,
+      },
+    },
+  };
 }
 
 export function applyAbliterationProviderConfig(cfg: OpenClawConfig): OpenClawConfig {
@@ -78,8 +87,20 @@ export function applyAbliterationProviderConfig(cfg: OpenClawConfig): OpenClawCo
 }
 
 export function applyAbliterationConfig(cfg: OpenClawConfig): OpenClawConfig {
-  return applyAgentDefaultModelPrimary(
-    applyAbliterationProviderConfigInternal(cfg),
-    ABLITERATION_DEFAULT_MODEL_REF,
-  );
+  const next = applyAbliterationProviderConfigInternal(cfg);
+  const currentModel = next.agents?.defaults?.model;
+
+  return {
+    ...next,
+    agents: {
+      ...next.agents,
+      defaults: {
+        ...next.agents?.defaults,
+        model: {
+          ...(typeof currentModel === "object" && currentModel !== null ? currentModel : {}),
+          primary: ABLITERATION_DEFAULT_MODEL_REF,
+        },
+      },
+    },
+  };
 }
