@@ -6,9 +6,13 @@ import { buildAbliterationProvider } from "./provider-catalog.js";
 describe("abliteration provider plugin", () => {
   it("registers Abliteration provider metadata", () => {
     const providers: unknown[] = [];
+    const modelCatalogProviders: unknown[] = [];
     plugin.register({
       registerProvider(provider: unknown) {
         providers.push(provider);
+      },
+      registerModelCatalogProvider(provider: unknown) {
+        modelCatalogProviders.push(provider);
       },
     } as never);
 
@@ -18,6 +22,11 @@ describe("abliteration provider plugin", () => {
       label: "Abliteration",
       docsPath: "https://github.com/abliterationai/openclaw-abliteration-provider#readme",
       envVars: ["ABLITERATION_API_KEY"],
+    });
+    expect(modelCatalogProviders).toHaveLength(1);
+    expect(modelCatalogProviders[0]).toMatchObject({
+      provider: "abliteration",
+      kinds: ["text"],
     });
   });
 

@@ -1,4 +1,4 @@
-import type { ModelDefinitionConfig } from "openclaw/plugin-sdk/provider-model-shared";
+import type { ModelDefinitionConfig } from "./types.js";
 
 export const ABLITERATION_BASE_URL = "https://api.abliteration.ai/v1";
 export const ABLITERATION_PROVIDER_API = "openai-responses";
