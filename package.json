@@ -33,7 +33,7 @@
     "node": ">=24.16.0 <25 || >=26.1.0"
   },
   "peerDependencies": {
-    "openclaw": "2026.9.6"
+    "openclaw": "2026.10.5"
   },
   "peerDependenciesMeta": {
     "openclaw": {
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "openclaw": "2026.9.6",
+    "openclaw": "2026.10.5",
     "typescript": "^6.0.3",
     "vitest": "4.1.11"
   },
